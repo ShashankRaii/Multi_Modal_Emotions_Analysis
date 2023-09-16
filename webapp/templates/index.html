@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="background-image-container" style="background-image: url('webapp/static/images/Home.png'); height: 100px;">
+    </div>
+        <div class="container-fluid py-5 text-center">
+            <h1 class="display-5 fw-bold">Welcome to our emotion classifier</h1>
+            <div class="background-image-container" style="background-image: url('webapp/static/images/Home.png'); height: 50px;">
+            </div>
+            <p class="fs-4">This demonstrator shows deployed convolutional neural network (CNN) based machine learning
+                algorithms to analyze your webcam and microphone stream.</p>
+                <a class="btn btn-primary btn-lg"
+                onclick="href='{{ url_for('audio8') }}'"
+                type="button"
+                style="background-color: green; transition: background-color 0.3s; padding: 10px 20px;"
+                onmouseover="this.style.backgroundColor='#50C878';"
+                onmouseout="this.style.backgroundColor='green';">
+               Audio Analysis
+             </a>
+             
+             <a class="btn btn-primary btn-lg"
+                onclick="href='{{ url_for('video') }}'"
+                type="button"
+                style="background-color: green; transition: background-color 0.3s; padding: 10px 20px;"
+                onmouseover="this.style.backgroundColor='#50C878';"
+                onmouseout="this.style.backgroundColor='green';">
+               Video Analysis
+             </a>
+             
+             <a class="btn btn-primary btn-lg"
+                onclick="href='{{ url_for('multimodal') }}'"
+                type="button"
+                style="background-color: green; transition: background-color 0.3s; padding: 10px 20px;"
+                onmouseover="this.style.backgroundColor='#50C878';"
+                onmouseout="this.style.backgroundColor='green';">
+               Multimodal Analysis
+             </a>
+             
+        </div>
+
+    </div>
+    <style>
+      /* Add your CSS styles here */
+      h1 {
+          font-size: 2.5rem;
+          font-weight: bold;
+      }
+  
+      p {
+          font-size: 1.25rem;
+          line-height: 1.5;
+      }
+  
+      .bg-light {
+          background-color: #f8f9fa;
+      }
+  
+      .rounded-3 {
+          border-radius: 0.375rem;
+      }
+  
+      img {
+          max-width: 100%;
+          height: auto;
+      }
+  </style>
+  
+  <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5 text-left">
+          <h1 class="display-5 fw-bold">About this project</h1>
+          <p class="fs-5 text-break">This project is made by 3 participants in HackX hackathon based on AIML domain.</p>
+          <p class="fs-5 text-break">Our objective was to create a microservice capable of accurately identifying a student's current emotional state by analyzing their voice and facial expressions. Through this project, we aim to showcase a camera and microphone-based application that employs multimodal emotion detection techniques.</p>
+          <p class="fs-5 text-break">We have developed a Python-based method to analyze audio and video streams for emotion recognition. In our research, we discovered that convolutional neural networks (CNNs) deliver the highest accuracy and performance for both types of data. However, since audio and video data have distinct input formats, we opted to train two separate models. These models generate predictions independently, which are later combined to provide a comprehensive emotion recognition result.</p>
+          <p class="fs-5 text-break">Feel free to explore our project to better grasp our goals and analysis, providing a broader perspective on what we're trying to achieve.</p>
+      </div>
+  </div>
+  
+  <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5 text-left">
+          <h1 class="display-5 fw-bold">Audio Model</h1>
+          <p class="fs-5 text-break">We employed Python and Jupyter Notebook to train our model using a dataset comprising 8 sets of 652 audio files. These high-quality recordings, performed by professional voice actors, were used to train the model for recognizing four specific emotions.</p>
+          <!-- <img src="../static/images_about/audio_model_acc.png" alt="accuracy"> -->
+      </div>
+  </div>
+  <div class="p-5 mb-4 bg-light rounded-3"></div>
+  <div class="container-fluid py-5 text-left">
+    <h1 class="display-5 fw-bold">Video Model</h1>
+    <p class="fs-5 text-break">
+        Python and Jupyter Notebook was used for training the model. The dataset consists of 981 48 x 48 images
+        which are face-frontal and are extracted from video sequences. 4 Emotions of the 7 provided are taken
+        into account for training the model.
+    </p>
+    <br>
+    
+    </div>
+    </div>  
+    
+{% endblock %}
